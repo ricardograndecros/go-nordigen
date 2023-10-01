@@ -120,7 +120,6 @@ func (c Client) GetAccountTransactions(accountId, date_from, date_to string) (*T
 	}
 
 	if resp.StatusCode != http.StatusOK {
-		log.Print(string(body))
 		return nil, errors.New("Error while fetching account transactions. " + string(rune(resp.StatusCode)))
 	}
 

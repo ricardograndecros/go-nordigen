@@ -55,8 +55,6 @@ func (c Client) NewRequisition(r Requisition) (*Requisition, error) {
 		return nil, err
 	}
 
-	log.Print(string(body))
-
 	if resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusOK {
 		return nil, errors.New("Error while creating the requisition. " + string(rune(resp.StatusCode)))
 	}
@@ -93,7 +91,7 @@ func (c Client) GetRequisitionsById(id string) (*Requisition, error) {
 	}
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, errors.New("Error while creating the requisition. " + string(rune(resp.StatusCode)))
+		return nil, errors.New("Error while looking for the requisitions. " + string(rune(resp.StatusCode)))
 	}
 
 	requisition := Requisition{}
