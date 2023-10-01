@@ -24,7 +24,7 @@ type Account struct {
 }
 
 type Transaction struct {
-	TransactionID                     string            `json:"transactionId,omitempty"`
+	TransactionID                     string            `json:"internalTransactionId,omitempty"`
 	DebtorName                        string            `json:"debtorName,omitempty"`
 	DebtorAccount                     DebtorAccount     `json:"debtorAccount,omitempty"`
 	TransactionAmount                 TransactionAmount `json:"transactionAmount"`
